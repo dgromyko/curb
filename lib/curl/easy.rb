@@ -10,7 +10,7 @@ module Curl
     class Error < StandardError
       attr_accessor :message, :code
       def initialize(code, msg)
-        set(:MAXCONNECTS, 100)
+        set(:maxconnects, 100)
         self.message = msg
         self.code = code
       end
