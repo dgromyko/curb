@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module Curl - Curb - libcurl bindings for ruby</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-asyncdns-3F">::asyncdns?</a>
+    
+    <li ><a href="#method-c-conv-3F">::conv?</a>
+    
+    <li ><a href="#method-c-debug-3F">::debug?</a>
+    
+    <li ><a href="#method-c-gssnegotiate-3F">::gssnegotiate?</a>
+    
+    <li ><a href="#method-c-http2-3F">::http2?</a>
+    
+    <li ><a href="#method-c-idn-3F">::idn?</a>
+    
+    <li ><a href="#method-c-ipv6-3F">::ipv6?</a>
+    
+    <li ><a href="#method-c-kerberos4-3F">::kerberos4?</a>
+    
+    <li ><a href="#method-c-largefile-3F">::largefile?</a>
+    
+    <li ><a href="#method-c-libz-3F">::libz?</a>
+    
+    <li ><a href="#method-c-ntlm-3F">::ntlm?</a>
+    
+    <li ><a href="#method-c-spnego-3F">::spnego?</a>
+    
+    <li ><a href="#method-c-ssl-3F">::ssl?</a>
+    
+    <li ><a href="#method-c-sspi-3F">::sspi?</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-Curl">
+  <h1 id="module-Curl" class="module">
+    module Curl
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="CURB_VERSION">CURB_VERSION
+        
+        <dd>
+        
+      
+        <dt id="CURLAUTH_ANY">CURLAUTH_ANY
+        
+        <dd>
+        
+      
+        <dt id="CURLAUTH_ANYSAFE">CURLAUTH_ANYSAFE
+        
+        <dd>
+        
+      
+        <dt id="CURLAUTH_BASIC">CURLAUTH_BASIC
+        
+        <dd>
+        
+      
+        <dt id="CURLAUTH_DIGEST">CURLAUTH_DIGEST
+        
+        <dd>
+        
+      
+        <dt id="CURLAUTH_GSSNEGOTIATE">CURLAUTH_GSSNEGOTIATE
+        
+        <dd>
+        
+      
+        <dt id="CURLAUTH_NTLM">CURLAUTH_NTLM
+        
+        <dd>
+        
+      
+        <dt id="CURLINFO_DATA_IN">CURLINFO_DATA_IN
+        
+        <dd><p>Passed to on_debug handler to indicate that the data is protocol data
+received from the peer.</p>
+        
+      
+        <dt id="CURLINFO_DATA_OUT">CURLINFO_DATA_OUT
+        
+        <dd><p>Passed to on_debug handler to indicate that the data is protocol data sent
+to the peer.</p>
+        
+      
+        <dt id="CURLINFO_HEADER_IN">CURLINFO_HEADER_IN
+        
+        <dd><p>Passed to on_debug handler to indicate that the data is header (or
+header-like) data received from the peer.</p>
+        
+      
+        <dt id="CURLINFO_HEADER_OUT">CURLINFO_HEADER_OUT
+        
+        <dd><p>Passed to on_debug handler to indicate that the data is header (or
+header-like) data sent to the peer.</p>
+        
+      
+        <dt id="CURLINFO_TEXT">CURLINFO_TEXT
+        
+        <dd><p>Passed to on_debug handler to indicate that the data is informational text.</p>
+        
+      
+        <dt id="CURLPROXY_HTTP">CURLPROXY_HTTP
+        
+        <dd>
+        
+      
+        <dt id="CURLPROXY_SOCKS4">CURLPROXY_SOCKS4
+        
+        <dd>
+        
+      
+        <dt id="CURLPROXY_SOCKS4A">CURLPROXY_SOCKS4A
+        
+        <dd>
+        
+      
+        <dt id="CURLPROXY_SOCKS5">CURLPROXY_SOCKS5
+        
+        <dd>
+        
+      
+        <dt id="CURLPROXY_SOCKS5_HOSTNAME">CURLPROXY_SOCKS5_HOSTNAME
+        
+        <dd>
+        
+      
+        <dt id="CURL_LONG_VERSION">CURL_LONG_VERSION
+        
+        <dd>
+        
+      
+        <dt id="CURL_MULTICWD">CURL_MULTICWD
+        
+        <dd>
+        
+      
+        <dt id="CURL_NOCWD">CURL_NOCWD
+        
+        <dd>
+        
+      
+        <dt id="CURL_SINGLECWD">CURL_SINGLECWD
+        
+        <dd>
+        
+      
+        <dt id="CURL_SSLVERSION_DEFAULT">CURL_SSLVERSION_DEFAULT
+        
+        <dd>
+        
+      
+        <dt id="CURL_SSLVERSION_SSLv2">CURL_SSLVERSION_SSLv2
+        
+        <dd>
+        
+      
+        <dt id="CURL_SSLVERSION_SSLv3">CURL_SSLVERSION_SSLv3
+        
+        <dd>
+        
+      
+        <dt id="CURL_SSLVERSION_TLSv1">CURL_SSLVERSION_TLSv1
+        
+        <dd>
+        
+      
+        <dt id="CURL_SSLVERSION_TLSv1_0">CURL_SSLVERSION_TLSv1_0
+        
+        <dd>
+        
+      
+        <dt id="CURL_SSLVERSION_TLSv1_1">CURL_SSLVERSION_TLSv1_1
+        
+        <dd>
+        
+      
+        <dt id="CURL_SSLVERSION_TLSv1_2">CURL_SSLVERSION_TLSv1_2
+        
+        <dd>
+        
+      
+        <dt id="CURL_USESSL_ALL">CURL_USESSL_ALL
+        
+        <dd>
+        
+      
+        <dt id="CURL_USESSL_CONTROL">CURL_USESSL_CONTROL
+        
+        <dd>
+        
+      
+        <dt id="CURL_USESSL_NONE">CURL_USESSL_NONE
+        
+        <dd>
+        
+      
+        <dt id="CURL_USESSL_TRY">CURL_USESSL_TRY
+        
+        <dd>
+        
+      
+        <dt id="CURL_VERNUM">CURL_VERNUM
+        
+        <dd>
+        
+      
+        <dt id="CURL_VERSION">CURL_VERSION
+        
+        <dd>
+        
+      
+        <dt id="HTTP_1_0">HTTP_1_0
+        
+        <dd>
+        
+      
+        <dt id="HTTP_1_1">HTTP_1_1
+        
+        <dd>
+        
+      
+        <dt id="HTTP_2_0">HTTP_2_0
+        
+        <dd>
+        
+      
+        <dt id="HTTP_NONE">HTTP_NONE
+        
+        <dd>
+        
+      
+        <dt id="LONG_VERSION">LONG_VERSION
+        
+        <dd>
+        
+      
+        <dt id="PIPE_HTTP1">PIPE_HTTP1
+        
+        <dd>
+        
+      
+        <dt id="PIPE_MULTIPLEX">PIPE_MULTIPLEX
+        
+        <dd>
+        
+      
+        <dt id="PIPE_NOTHING">PIPE_NOTHING
+        
+        <dd>
+        
+      
+        <dt id="VERNUM">VERNUM
+        
+        <dd>
+        
+      
+        <dt id="VERSION">VERSION
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-asyncdns-3F" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            asyncdns?                                   &rarr; true or false
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if the installed libcurl was built with support for
+asynchronous name lookups, which allows more exact timeouts (even on
+Windows) and less blocking when using the multi interface. For libcurl
+versions &lt; 7.10.7, always returns false.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="asyncdns-3F-source">
+            <pre>static VALUE ruby_curl_asyncdns_q(VALUE mod) {
+#ifdef HAVE_CURL_VERSION_ASYNCHDNS
+  curl_version_info_data *ver = curl_version_info(CURLVERSION_NOW);
+  return((ver-&gt;features &amp; CURL_VERSION_ASYNCHDNS) ? Qtrue : Qfalse);
+#else
+  return Qfalse;
+#endif
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-conv-3F" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            conv?                                       &rarr; true or false
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if the installed libcurl was built with support for character
+conversions. For libcurl versions &lt; 7.15.4, always returns false.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="conv-3F-source">
+            <pre>static VALUE ruby_curl_conv_q(VALUE mod) {
+#ifdef HAVE_CURL_VERSION_CONV
+  curl_version_info_data *ver = curl_version_info(CURLVERSION_NOW);
+  return((ver-&gt;features &amp; CURL_VERSION_CONV) ? Qtrue : Qfalse);
+#else
+  return Qfalse;
+#endif
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-debug-3F" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            debug?                                      &rarr; true or false
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if the installed libcurl was built with extra debug
+capabilities built-in. For libcurl versions &lt; 7.10.6, always returns
+false.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="debug-3F-source">
+            <pre>static VALUE ruby_curl_debug_q(VALUE mod) {
+#ifdef HAVE_CURL_VERSION_DEBUG
+  curl_version_info_data *ver = curl_version_info(CURLVERSION_NOW);
+  return((ver-&gt;features &amp; CURL_VERSION_DEBUG) ? Qtrue : Qfalse);
+#else
+  return Qfalse;
+#endif
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-gssnegotiate-3F" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            gssnegotiate?                               &rarr; true or false
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if the installed libcurl supports HTTP GSS-Negotiate. For
+libcurl versions &lt; 7.10.6, always returns false.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="gssnegotiate-3F-source">
+            <pre>static VALUE ruby_curl_gssnegotiate_q(VALUE mod) {
+#ifdef HAVE_CURL_VERSION_GSSNEGOTIATE
+  curl_version_info_data *ver = curl_version_info(CURLVERSION_NOW);
+  return((ver-&gt;features &amp; CURL_VERSION_GSSNEGOTIATE) ? Qtrue : Qfalse);
+#else
+  return Qfalse;
+#endif
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-http2-3F" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            http2?                                       &rarr; true or false
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if the installed libcurl was built with support for HTTP2. For
+libcurl versions &lt; 7.33.0, always returns false.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="http2-3F-source">
+            <pre>static VALUE ruby_curl_http2_q(VALUE mod) {
+#ifdef HAVE_CURL_VERSION_HTTP2
+  curl_version_info_data *ver = curl_version_info(CURLVERSION_NOW);
+  return((ver-&gt;features &amp; CURL_VERSION_HTTP2) ? Qtrue : Qfalse);
+#else
+  return Qfalse;
+#endif
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-idn-3F" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            idn?                                        &rarr; true or false
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if the installed libcurl was built with support for IDNA,
+domain names with international letters. For libcurl versions &lt; 7.12.0,
+always returns false.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="idn-3F-source">
+            <pre>static VALUE ruby_curl_idn_q(VALUE mod) {
+#ifdef HAVE_CURL_VERSION_IDN
+  curl_version_info_data *ver = curl_version_info(CURLVERSION_NOW);
+  return((ver-&gt;features &amp; CURL_VERSION_IDN) ? Qtrue : Qfalse);
+#else
+  return Qfalse;
+#endif
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-ipv6-3F" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            ipv6?                                       &rarr; true or false
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if the installed libcurl supports IPv6.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="ipv6-3F-source">
+            <pre>static VALUE ruby_curl_ipv6_q(VALUE mod) {
+  curl_version_info_data *ver = curl_version_info(CURLVERSION_NOW);
+  return((ver-&gt;features &amp; CURL_VERSION_IPV6) ? Qtrue : Qfalse);
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-kerberos4-3F" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            kerberos4?                                  &rarr; true or false
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if the installed libcurl supports Kerberos4 authentication
+with FTP connections.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="kerberos4-3F-source">
+            <pre>static VALUE ruby_curl_kerberos4_q(VALUE mod) {
+  curl_version_info_data *ver = curl_version_info(CURLVERSION_NOW);
+  return((ver-&gt;features &amp; CURL_VERSION_KERBEROS4) ? Qtrue : Qfalse);
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-largefile-3F" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            largefile?                                  &rarr; true or false
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if the installed libcurl was built with support for large
+files. For libcurl versions &lt; 7.11.1, always returns false.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="largefile-3F-source">
+            <pre>static VALUE ruby_curl_largefile_q(VALUE mod) {
+#ifdef HAVE_CURL_VERSION_LARGEFILE
+  curl_version_info_data *ver = curl_version_info(CURLVERSION_NOW);
+  return((ver-&gt;features &amp; CURL_VERSION_LARGEFILE) ? Qtrue : Qfalse);
+#else
+  return Qfalse;
+#endif
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-libz-3F" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            libz?                                       &rarr; true or false
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if the installed libcurl supports HTTP deflate using libz. For
+libcurl versions &lt; 7.10, always returns false.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="libz-3F-source">
+            <pre>static VALUE ruby_curl_libz_q(VALUE mod) {
+#ifdef HAVE_CURL_VERSION_LIBZ
+  curl_version_info_data *ver = curl_version_info(CURLVERSION_NOW);
+  return((ver-&gt;features &amp; CURL_VERSION_LIBZ) ? Qtrue : Qfalse);
+#else
+  return Qfalse;
+#endif
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-ntlm-3F" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            ntlm?                                       &rarr; true or false
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if the installed libcurl supports HTTP NTLM. For libcurl
+versions &lt; 7.10.6, always returns false.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="ntlm-3F-source">
+            <pre>static VALUE ruby_curl_ntlm_q(VALUE mod) {
+#ifdef HAVE_CURL_VERSION_NTLM
+  curl_version_info_data *ver = curl_version_info(CURLVERSION_NOW);
+  return((ver-&gt;features &amp; CURL_VERSION_NTLM) ? Qtrue : Qfalse);
+#else
+  return Qfalse;
+#endif
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-spnego-3F" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            spnego?                                     &rarr; true or false
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if the installed libcurl was built with support for SPNEGO
+authentication (Simple and Protected GSS-API Negotiation Mechanism, defined
+in RFC 2478). For libcurl versions &lt; 7.10.8, always returns false.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="spnego-3F-source">
+            <pre>static VALUE ruby_curl_spnego_q(VALUE mod) {
+#ifdef HAVE_CURL_VERSION_SPNEGO
+  curl_version_info_data *ver = curl_version_info(CURLVERSION_NOW);
+  return((ver-&gt;features &amp; CURL_VERSION_SPNEGO) ? Qtrue : Qfalse);
+#else
+  return Qfalse;
+#endif
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-ssl-3F" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            ssl?                                        &rarr; true or false
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if the installed libcurl supports SSL connections. For libcurl
+versions &lt; 7.10, always returns false.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="ssl-3F-source">
+            <pre>static VALUE ruby_curl_ssl_q(VALUE mod) {
+#ifdef HAVE_CURL_VERSION_SSL
+  curl_version_info_data *ver = curl_version_info(CURLVERSION_NOW);
+  return((ver-&gt;features &amp; CURL_VERSION_SSL) ? Qtrue : Qfalse);
+#else
+  return Qfalse;
+#endif
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-sspi-3F" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            sspi?                                       &rarr; true or false
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if the installed libcurl was built with support for SSPI. This
+is only available on Windows and makes libcurl use Windows-provided
+functions for NTLM authentication. It also allows libcurl to use the
+current user and the current user&#39;s password without the app having to
+pass them on. For libcurl versions &lt; 7.13.2, always returns false.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="sspi-3F-source">
+            <pre>static VALUE ruby_curl_sspi_q(VALUE mod) {
+#ifdef HAVE_CURL_VERSION_SSPI
+  curl_version_info_data *ver = curl_version_info(CURLVERSION_NOW);
+  return((ver-&gt;features &amp; CURL_VERSION_SSPI) ? Qtrue : Qfalse);
+#else
+  return Qfalse;
+#endif
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.0.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

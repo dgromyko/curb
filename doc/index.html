@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Curb - libcurl bindings for ruby</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./LICENSE.html">LICENSE</a>
+  
+  </ul>
+</div>
+
+    <div id="classindex-section" class="nav-section">
+  <h3>Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Curl.html">Curl</a>
+  
+    <li><a href="./Curl/Easy.html">Curl::Easy</a>
+  
+    <li><a href="./Curl/Err.html">Curl::Err</a>
+  
+    <li><a href="./Curl/Err/AbortedByCallbackError.html">Curl::Err::AbortedByCallbackError</a>
+  
+    <li><a href="./Curl/Err/AccessDeniedError.html">Curl::Err::AccessDeniedError</a>
+  
+    <li><a href="./Curl/Err/Again.html">Curl::Err::Again</a>
+  
+    <li><a href="./Curl/Err/BadCallingOrderError.html">Curl::Err::BadCallingOrderError</a>
+  
+    <li><a href="./Curl/Err/BadContentEncodingError.html">Curl::Err::BadContentEncodingError</a>
+  
+    <li><a href="./Curl/Err/BadFileListError.html">Curl::Err::BadFileListError</a>
+  
+    <li><a href="./Curl/Err/BadFunctionArgumentError.html">Curl::Err::BadFunctionArgumentError</a>
+  
+    <li><a href="./Curl/Err/BadOptionSyntaxError.html">Curl::Err::BadOptionSyntaxError</a>
+  
+    <li><a href="./Curl/Err/BadPasswordEnteredError.html">Curl::Err::BadPasswordEnteredError</a>
+  
+    <li><a href="./Curl/Err/BadPasswordError.html">Curl::Err::BadPasswordError</a>
+  
+    <li><a href="./Curl/Err/BadResumeError.html">Curl::Err::BadResumeError</a>
+  
+    <li><a href="./Curl/Err/CantGetHostError.html">Curl::Err::CantGetHostError</a>
+  
+    <li><a href="./Curl/Err/CantReconnectError.html">Curl::Err::CantReconnectError</a>
+  
+    <li><a href="./Curl/Err/ChunkFailedError.html">Curl::Err::ChunkFailedError</a>
+  
+    <li><a href="./Curl/Err/ConnectionFailedError.html">Curl::Err::ConnectionFailedError</a>
+  
+    <li><a href="./Curl/Err/ConvFailed.html">Curl::Err::ConvFailed</a>
+  
+    <li><a href="./Curl/Err/ConvReqd.html">Curl::Err::ConvReqd</a>
+  
+    <li><a href="./Curl/Err/CouldntBindError.html">Curl::Err::CouldntBindError</a>
+  
+    <li><a href="./Curl/Err/CouldntGetSizeError.html">Curl::Err::CouldntGetSizeError</a>
+  
+    <li><a href="./Curl/Err/CouldntReadError.html">Curl::Err::CouldntReadError</a>
+  
+    <li><a href="./Curl/Err/CouldntRetrFileError.html">Curl::Err::CouldntRetrFileError</a>
+  
+    <li><a href="./Curl/Err/CouldntSetASCIIError.html">Curl::Err::CouldntSetASCIIError</a>
+  
+    <li><a href="./Curl/Err/CouldntSetBinaryError.html">Curl::Err::CouldntSetBinaryError</a>
+  
+    <li><a href="./Curl/Err/CouldntStorFileError.html">Curl::Err::CouldntStorFileError</a>
+  
+    <li><a href="./Curl/Err/CouldntUseRestError.html">Curl::Err::CouldntUseRestError</a>
+  
+    <li><a href="./Curl/Err/CseqError.html">Curl::Err::CseqError</a>
+  
+    <li><a href="./Curl/Err/CurlError.html">Curl::Err::CurlError</a>
+  
+    <li><a href="./Curl/Err/CurlOK.html">Curl::Err::CurlOK</a>
+  
+    <li><a href="./Curl/Err/DiskFullError.html">Curl::Err::DiskFullError</a>
+  
+    <li><a href="./Curl/Err/FTPError.html">Curl::Err::FTPError</a>
+  
+    <li><a href="./Curl/Err/FTPQuoteError.html">Curl::Err::FTPQuoteError</a>
+  
+    <li><a href="./Curl/Err/FTPSSLFailed.html">Curl::Err::FTPSSLFailed</a>
+  
+    <li><a href="./Curl/Err/FTPWriteError.html">Curl::Err::FTPWriteError</a>
+  
+    <li><a href="./Curl/Err/FailedInitError.html">Curl::Err::FailedInitError</a>
+  
+    <li><a href="./Curl/Err/FileError.html">Curl::Err::FileError</a>
+  
+    <li><a href="./Curl/Err/FileExistsError.html">Curl::Err::FileExistsError</a>
+  
+    <li><a href="./Curl/Err/FileSizeExceededError.html">Curl::Err::FileSizeExceededError</a>
+  
+    <li><a href="./Curl/Err/FunctionNotFoundError.html">Curl::Err::FunctionNotFoundError</a>
+  
+    <li><a href="./Curl/Err/GotNothingError.html">Curl::Err::GotNothingError</a>
+  
+    <li><a href="./Curl/Err/HTTP2StreamError.html">Curl::Err::HTTP2StreamError</a>
+  
+    <li><a href="./Curl/Err/HTTPError.html">Curl::Err::HTTPError</a>
+  
+    <li><a href="./Curl/Err/HTTPFailedError.html">Curl::Err::HTTPFailedError</a>
+  
+    <li><a href="./Curl/Err/HTTPPostError.html">Curl::Err::HTTPPostError</a>
+  
+    <li><a href="./Curl/Err/HTTPRangeError.html">Curl::Err::HTTPRangeError</a>
+  
+    <li><a href="./Curl/Err/HostResolutionError.html">Curl::Err::HostResolutionError</a>
+  
+    <li><a href="./Curl/Err/IllegalOperationError.html">Curl::Err::IllegalOperationError</a>
+  
+    <li><a href="./Curl/Err/InterfaceFailedError.html">Curl::Err::InterfaceFailedError</a>
+  
+    <li><a href="./Curl/Err/InvalidLDAPURLError.html">Curl::Err::InvalidLDAPURLError</a>
+  
+    <li><a href="./Curl/Err/InvalidPostFieldError.html">Curl::Err::InvalidPostFieldError</a>
+  
+    <li><a href="./Curl/Err/LDAPError.html">Curl::Err::LDAPError</a>
+  
+    <li><a href="./Curl/Err/LibraryNotFoundError.html">Curl::Err::LibraryNotFoundError</a>
+  
+    <li><a href="./Curl/Err/LoginDeniedError.html">Curl::Err::LoginDeniedError</a>
+  
+    <li><a href="./Curl/Err/MalformedURLError.html">Curl::Err::MalformedURLError</a>
+  
+    <li><a href="./Curl/Err/MalformedURLUserError.html">Curl::Err::MalformedURLUserError</a>
+  
+    <li><a href="./Curl/Err/MalformedUserError.html">Curl::Err::MalformedUserError</a>
+  
+    <li><a href="./Curl/Err/MultiAddedAlready.html">Curl::Err::MultiAddedAlready</a>
+  
+    <li><a href="./Curl/Err/MultiBadEasyHandle.html">Curl::Err::MultiBadEasyHandle</a>
+  
+    <li><a href="./Curl/Err/MultiBadHandle.html">Curl::Err::MultiBadHandle</a>
+  
+    <li><a href="./Curl/Err/MultiBadSocket.html">Curl::Err::MultiBadSocket</a>
+  
+    <li><a href="./Curl/Err/MultiInitError.html">Curl::Err::MultiInitError</a>
+  
+    <li><a href="./Curl/Err/MultiInternalError.html">Curl::Err::MultiInternalError</a>
+  
+    <li><a href="./Curl/Err/MultiOutOfMemory.html">Curl::Err::MultiOutOfMemory</a>
+  
+    <li><a href="./Curl/Err/MultiPerform.html">Curl::Err::MultiPerform</a>
+  
+    <li><a href="./Curl/Err/MultiUnknownOption.html">Curl::Err::MultiUnknownOption</a>
+  
+    <li><a href="./Curl/Err/NoConnectionAvailableError.html">Curl::Err::NoConnectionAvailableError</a>
+  
+    <li><a href="./Curl/Err/NoSuchUserError.html">Curl::Err::NoSuchUserError</a>
+  
+    <li><a href="./Curl/Err/NotBuiltInError.html">Curl::Err::NotBuiltInError</a>
+  
+    <li><a href="./Curl/Err/NotFoundError.html">Curl::Err::NotFoundError</a>
+  
+    <li><a href="./Curl/Err/ObsoleteError.html">Curl::Err::ObsoleteError</a>
+  
+    <li><a href="./Curl/Err/OutOfMemoryError.html">Curl::Err::OutOfMemoryError</a>
+  
+    <li><a href="./Curl/Err/PPRETFailedError.html">Curl::Err::PPRETFailedError</a>
+  
+    <li><a href="./Curl/Err/PartialFileError.html">Curl::Err::PartialFileError</a>
+  
+    <li><a href="./Curl/Err/PermissionError.html">Curl::Err::PermissionError</a>
+  
+    <li><a href="./Curl/Err/PortFailedError.html">Curl::Err::PortFailedError</a>
+  
+    <li><a href="./Curl/Err/ProxyResolutionError.html">Curl::Err::ProxyResolutionError</a>
+  
+    <li><a href="./Curl/Err/RTSPError.html">Curl::Err::RTSPError</a>
+  
+    <li><a href="./Curl/Err/ReadError.html">Curl::Err::ReadError</a>
+  
+    <li><a href="./Curl/Err/RecvError.html">Curl::Err::RecvError</a>
+  
+    <li><a href="./Curl/Err/RemoteFileNotFound.html">Curl::Err::RemoteFileNotFound</a>
+  
+    <li><a href="./Curl/Err/SSH.html">Curl::Err::SSH</a>
+  
+    <li><a href="./Curl/Err/SSLCACertificateError.html">Curl::Err::SSLCACertificateError</a>
+  
+    <li><a href="./Curl/Err/SSLCRLBadfile.html">Curl::Err::SSLCRLBadfile</a>
+  
+    <li><a href="./Curl/Err/SSLCaertBadFile.html">Curl::Err::SSLCaertBadFile</a>
+  
+    <li><a href="./Curl/Err/SSLCertificateError.html">Curl::Err::SSLCertificateError</a>
+  
+    <li><a href="./Curl/Err/SSLConnectError.html">Curl::Err::SSLConnectError</a>
+  
+    <li><a href="./Curl/Err/SSLCypherError.html">Curl::Err::SSLCypherError</a>
+  
+    <li><a href="./Curl/Err/SSLEngineInitFailedError.html">Curl::Err::SSLEngineInitFailedError</a>
+  
+    <li><a href="./Curl/Err/SSLEngineNotFoundError.html">Curl::Err::SSLEngineNotFoundError</a>
+  
+    <li><a href="./Curl/Err/SSLEngineSetFailedError.html">Curl::Err::SSLEngineSetFailedError</a>
+  
+    <li><a href="./Curl/Err/SSLInvalidCertStatusError.html">Curl::Err::SSLInvalidCertStatusError</a>
+  
+    <li><a href="./Curl/Err/SSLIssuerError.html">Curl::Err::SSLIssuerError</a>
+  
+    <li><a href="./Curl/Err/SSLPeerCertificateError.html">Curl::Err::SSLPeerCertificateError</a>
+  
+    <li><a href="./Curl/Err/SSLPinnedPubKeyNotMatchError.html">Curl::Err::SSLPinnedPubKeyNotMatchError</a>
+  
+    <li><a href="./Curl/Err/SSLShutdownFailed.html">Curl::Err::SSLShutdownFailed</a>
+  
+    <li><a href="./Curl/Err/SearchFailedError.html">Curl::Err::SearchFailedError</a>
+  
+    <li><a href="./Curl/Err/SendError.html">Curl::Err::SendError</a>
+  
+    <li><a href="./Curl/Err/SendFailedRewind.html">Curl::Err::SendFailedRewind</a>
+  
+    <li><a href="./Curl/Err/SessionError.html">Curl::Err::SessionError</a>
+  
+    <li><a href="./Curl/Err/ShareInUseError.html">Curl::Err::ShareInUseError</a>
+  
+    <li><a href="./Curl/Err/TFTPError.html">Curl::Err::TFTPError</a>
+  
+    <li><a href="./Curl/Err/TelnetError.html">Curl::Err::TelnetError</a>
+  
+    <li><a href="./Curl/Err/TimeoutError.html">Curl::Err::TimeoutError</a>
+  
+    <li><a href="./Curl/Err/TooManyRedirectsError.html">Curl::Err::TooManyRedirectsError</a>
+  
+    <li><a href="./Curl/Err/UnknownIDError.html">Curl::Err::UnknownIDError</a>
+  
+    <li><a href="./Curl/Err/UnknownOptionError.html">Curl::Err::UnknownOptionError</a>
+  
+    <li><a href="./Curl/Err/UnsupportedProtocolError.html">Curl::Err::UnsupportedProtocolError</a>
+  
+    <li><a href="./Curl/Err/Weird227FormatError.html">Curl::Err::Weird227FormatError</a>
+  
+    <li><a href="./Curl/Err/WeirdPassReplyError.html">Curl::Err::WeirdPassReplyError</a>
+  
+    <li><a href="./Curl/Err/WeirdPasvReplyError.html">Curl::Err::WeirdPasvReplyError</a>
+  
+    <li><a href="./Curl/Err/WeirdReplyError.html">Curl::Err::WeirdReplyError</a>
+  
+    <li><a href="./Curl/Err/WeirdUserReplyError.html">Curl::Err::WeirdUserReplyError</a>
+  
+    <li><a href="./Curl/Err/WriteError.html">Curl::Err::WriteError</a>
+  
+    <li><a href="./Curl/Multi.html">Curl::Multi</a>
+  
+    <li><a href="./Curl/PostField.html">Curl::PostField</a>
+  
+    <li><a href="./Curl/Upload.html">Curl::Upload</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main">
+<p>This is the API documentation for Curb - libcurl bindings for ruby.
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.0.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

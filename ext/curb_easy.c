@@ -344,8 +344,6 @@ static VALUE ruby_curl_easy_initialize(int argc, VALUE *argv, VALUE self) {
     rb_raise(eCurlErrFailedInit, "Failed to initialize easy handle");
   }
 
-  curl_easy_setopt(rbce->curl, CURLOPT_MAXCONNECTS, 100);
-
   rbce->multi = Qnil;
   rbce->opts  = Qnil;
 
@@ -359,6 +357,8 @@ static VALUE ruby_curl_easy_initialize(int argc, VALUE *argv, VALUE self) {
   if (ecode != CURLE_OK) {
     raise_curl_easy_error_exception(ecode);
   }
+
+  curl_easy_setopt(rbce->curl, CURLOPT_MAXCONNECTS, 100);
 
   if (blk != Qnil) {
     rb_funcall(blk, idCall, 1, self);

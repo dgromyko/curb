@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Curl::Multi - Curb - libcurl bindings for ruby</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-autoclose">::autoclose</a>
+    
+    <li ><a href="#method-c-autoclose-3D">::autoclose=</a>
+    
+    <li ><a href="#method-c-default_timeout">::default_timeout</a>
+    
+    <li ><a href="#method-c-default_timeout-3D">::default_timeout=</a>
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-_add">#_add</a>
+    
+    <li ><a href="#method-i-_close">#_close</a>
+    
+    <li ><a href="#method-i-_remove">#_remove</a>
+    
+    <li ><a href="#method-i-max_connects-3D">#max_connects=</a>
+    
+    <li ><a href="#method-i-perform">#perform</a>
+    
+    <li ><a href="#method-i-pipeline-3D">#pipeline=</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Curl::Multi">
+  <h1 id="class-Curl::Multi" class="class">
+    class Curl::Multi
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-autoclose" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            Curl::Multi.autoclose &rarr; true|false
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Get the global default autoclose setting for all <a
+href="Multi.html">Curl::Multi</a> Handles.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="autoclose-source">
+            <pre>VALUE ruby_curl_multi_get_autoclose(VALUE klass) {
+  return cCurlMutiAutoClose == 1 ? Qtrue : Qfalse;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-autoclose-3D" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            Curl::Multi.autoclose = true &rarr; true
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Automatically close open connections after each request. Otherwise, the
+connection will remain open  for reuse until the next GC</p>
+          
+          
+
+          
+          <div class="method-source-code" id="autoclose-3D-source">
+            <pre>VALUE ruby_curl_multi_set_autoclose(VALUE klass, VALUE onoff) {
+  cCurlMutiAutoClose = ((onoff == Qtrue) ? 1 : 0);
+  return onoff;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-default_timeout" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            Curl::Multi.default_timeout = 4 &rarr; 4
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Get the global default time out for all <a
+href="Multi.html">Curl::Multi</a> Handles.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="default_timeout-source">
+            <pre>VALUE ruby_curl_multi_get_default_timeout(VALUE klass) {
+  return LONG2NUM(cCurlMutiDefaulttimeout);
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-default_timeout-3D" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            Curl::Multi.default_timeout = 4 &rarr; 4
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Set the global default time out for all <a
+href="Multi.html">Curl::Multi</a> Handles.  This value is used when libcurl
+cannot determine a timeout value when calling curl_multi_timeout.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="default_timeout-3D-source">
+            <pre>VALUE ruby_curl_multi_set_default_timeout(VALUE klass, VALUE timeout) {
+  cCurlMutiDefaulttimeout = NUM2LONG(timeout);
+  return timeout;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            Curl::Multi.new                                   &rarr; #&amp;lt;Curl::Easy...&amp;gt;
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Create a new <a href="Multi.html">Curl::Multi</a> instance</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre>VALUE ruby_curl_multi_new(VALUE klass) {
+  ruby_curl_multi *rbcm = ALLOC(ruby_curl_multi);
+
+  ruby_curl_multi_init(rbcm);
+
+  /*
+   * The mark routine will be called by the garbage collector during its ``mark&#39;&#39; phase.
+   * If your structure references other Ruby objects, then your mark function needs to
+   * identify these objects using rb_gc_mark(value). If the structure doesn&#39;t reference
+   * other Ruby objects, you can simply pass 0 as a function pointer.
+  */
+  return Data_Wrap_Struct(klass, 0, curl_multi_free, rbcm);
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-_add" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            multi = Curl::Multi.new
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            easy = Curl::Easy.new(&#39;url&#39;)
+          </span>
+          
+        </div>
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            add(easy)
+          </span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Add an easy handle to the multi stack</p>
+          
+          
+
+          
+          <div class="method-source-code" id="_add-source">
+            <pre>VALUE ruby_curl_multi_add(VALUE self, VALUE easy) {
+  CURLMcode mcode;
+  ruby_curl_easy *rbce;
+  ruby_curl_multi *rbcm;
+
+  Data_Get_Struct(self, ruby_curl_multi, rbcm);
+  Data_Get_Struct(easy, ruby_curl_easy, rbce);
+
+  /* setup the easy handle */
+  ruby_curl_easy_setup( rbce );
+
+  mcode = curl_multi_add_handle(rbcm-&gt;handle, rbce-&gt;curl);
+  if (mcode != CURLM_CALL_MULTI_PERFORM &amp;&amp; mcode != CURLM_OK) {
+    raise_curl_multi_error_exception(mcode);
+  }
+
+  rbcm-&gt;active++;
+
+  /* Increase the running count, so that the perform loop keeps running.
+   * If this number is not correct, the next call to curl_multi_perform will correct it. */
+  rbcm-&gt;running++;
+
+  /* track a reference to associated multi handle */
+  rbce-&gt;multi = self;
+
+  return self;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-_close" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">_close</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>multi.close after closing the multi handle all connections will be closed
+and the handle will no longer be usable</p>
+          
+          
+
+          
+          <div class="method-source-code" id="_close-source">
+            <pre>VALUE ruby_curl_multi_close(VALUE self) {
+  ruby_curl_multi *rbcm;
+  Data_Get_Struct(self, ruby_curl_multi, rbcm);
+  curl_multi_cleanup(rbcm-&gt;handle);
+  ruby_curl_multi_init(rbcm);
+  return self;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-_remove" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            multi = Curl::Multi.new
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            easy = Curl::Easy.new(&#39;url&#39;)
+          </span>
+          
+        </div>
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            add(easy)
+          </span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p># sometime later multi.remove(easy)</p>
+
+<p>Remove an easy handle from a multi stack.</p>
+
+<p>Will raise an exception if the easy handle is not found</p>
+          
+          
+
+          
+          <div class="method-source-code" id="_remove-source">
+            <pre>VALUE ruby_curl_multi_remove(VALUE self, VALUE rb_easy_handle) {
+  ruby_curl_multi *rbcm;
+
+  Data_Get_Struct(self, ruby_curl_multi, rbcm);
+
+  rb_curl_multi_remove(rbcm, rb_easy_handle);
+
+  return self;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-max_connects-3D" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            multi = Curl::Multi.new
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            max_connects = 800
+          </span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Set the max connections in the cache for a multi handle</p>
+          
+          
+
+          
+          <div class="method-source-code" id="max_connects-3D-source">
+            <pre>static VALUE ruby_curl_multi_max_connects(VALUE self, VALUE count) {
+#ifdef HAVE_CURLMOPT_MAXCONNECTS
+  ruby_curl_multi *rbcm;
+
+  Data_Get_Struct(self, ruby_curl_multi, rbcm);
+
+  curl_multi_setopt(rbcm-&gt;handle, CURLMOPT_MAXCONNECTS, NUM2LONG(count));
+#endif
+
+  return count;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-perform" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            multi = Curl::Multi.new
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            easy1 = Curl::Easy.new(&#39;url&#39;)
+          </span>
+          
+        </div>
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            easy2 = Curl::Easy.new(&#39;url&#39;)
+          </span>
+          
+        </div>
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            add(easy1)
+          </span>
+          
+        </div>
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            add(easy2)
+          </span>
+          
+        </div>
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            perform do
+          </span>
+          
+        </div>
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            # while idle other code my execute here
+          </span>
+          
+        </div>
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            end
+          </span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Run multi handles, looping selecting when data can be transfered</p>
+          
+          
+
+          
+          <div class="method-source-code" id="perform-source">
+            <pre>VALUE ruby_curl_multi_perform(int argc, VALUE *argv, VALUE self) {
+  CURLMcode mcode;
+  ruby_curl_multi *rbcm;
+  int maxfd, rc = -1;
+  fd_set fdread, fdwrite, fdexcep;
+#ifdef _WIN32
+  fd_set crt_fdread, crt_fdwrite, crt_fdexcep;
+#endif
+  long timeout_milliseconds;
+  struct timeval tv = {0, 0};
+  struct timeval tv_100ms = {0, 100000};
+  VALUE block = Qnil;
+#if defined(HAVE_RB_THREAD_BLOCKING_REGION) || defined(HAVE_RB_THREAD_CALL_WITHOUT_GVL)
+  struct _select_set fdset_args;
+#endif
+
+  rb_scan_args(argc, argv, &quot;0&amp;&quot;, &amp;block);
+
+  Data_Get_Struct(self, ruby_curl_multi, rbcm);
+
+  timeout_milliseconds = cCurlMutiDefaulttimeout;
+
+  // Run curl_multi_perform for the first time to get the ball rolling
+  rb_curl_multi_run( self, rbcm-&gt;handle, &amp;(rbcm-&gt;running) );
+
+  // Check the easy handles for new messages one more time before yielding
+  // control to passed ruby block.
+  //
+  // This call will block until all queued messages are processed and if any
+  // handle completed the transfer we will run the on_complete callback here too.
+  rb_curl_multi_read_info( self, rbcm-&gt;handle );
+
+  // There are no more messages to handle by curl and we can run the ruby block
+  // passed to perform method.
+  // When the block completes curl will resume.
+  if (block != Qnil) {
+    rb_funcall(block, rb_intern(&quot;call&quot;), 1, self);
+  }
+
+  do {
+    while (rbcm-&gt;running) {
+
+#ifdef HAVE_CURL_MULTI_TIMEOUT
+      /* get the curl suggested time out */
+      mcode = curl_multi_timeout(rbcm-&gt;handle, &amp;timeout_milliseconds);
+      if (mcode != CURLM_OK) {
+        raise_curl_multi_error_exception(mcode);
+      }
+#else
+      /* libcurl doesn&#39;t have a timeout method defined, initialize to -1 we&#39;ll pick up the default later */
+      timeout_milliseconds = -1;
+#endif
+
+      if (timeout_milliseconds == 0) { /* no delay */
+        rb_curl_multi_run( self, rbcm-&gt;handle, &amp;(rbcm-&gt;running) );
+        rb_curl_multi_read_info( self, rbcm-&gt;handle );
+        if (block != Qnil) { rb_funcall(block, rb_intern(&quot;call&quot;), 1, self);  }
+        continue;
+      }
+
+      if (timeout_milliseconds &lt; 0 || timeout_milliseconds &gt; cCurlMutiDefaulttimeout) {
+        timeout_milliseconds = cCurlMutiDefaulttimeout; /* libcurl doesn&#39;t know how long to wait, use a default timeout */
+                                                        /* or buggy versions libcurl sometimes reports huge timeouts... let&#39;s cap it */
+      }
+
+      tv.tv_sec  = 0; /* never wait longer than 1 second */
+      tv.tv_usec = (int)(timeout_milliseconds * 1000); /* XXX: int is the right type for OSX, what about linux? */
+
+      FD_ZERO(&amp;fdread);
+      FD_ZERO(&amp;fdwrite);
+      FD_ZERO(&amp;fdexcep);
+
+      /* load the fd sets from the multi handle */
+      mcode = curl_multi_fdset(rbcm-&gt;handle, &amp;fdread, &amp;fdwrite, &amp;fdexcep, &amp;maxfd);
+      if (mcode != CURLM_OK) {
+        raise_curl_multi_error_exception(mcode);
+      }
+
+      if (maxfd == -1) {
+        /* libcurl recommends sleeping for 100ms */
+        rb_thread_wait_for(tv_100ms);
+        rb_curl_multi_run( self, rbcm-&gt;handle, &amp;(rbcm-&gt;running) );
+        rb_curl_multi_read_info( self, rbcm-&gt;handle );
+        if (block != Qnil) { rb_funcall(block, rb_intern(&quot;call&quot;), 1, self);  }
+        continue;
+      }
+
+#ifdef _WIN32
+      create_crt_fd(&amp;fdread, &amp;crt_fdread);
+      create_crt_fd(&amp;fdwrite, &amp;crt_fdwrite);
+      create_crt_fd(&amp;fdexcep, &amp;crt_fdexcep);
+#endif
+
+
+#if (defined(HAVE_RB_THREAD_BLOCKING_REGION) || defined(HAVE_RB_THREAD_CALL_WITHOUT_GVL))
+      fdset_args.maxfd = maxfd+1;
+      fdset_args.fdread = &amp;fdread;
+      fdset_args.fdwrite = &amp;fdwrite;
+      fdset_args.fdexcep = &amp;fdexcep;
+      fdset_args.tv = &amp;tv;
+#endif
+
+#ifdef HAVE_RB_THREAD_CALL_WITHOUT_GVL
+      rc = (int)(VALUE) rb_thread_call_without_gvl((void *(*)(void *))curb_select, &amp;fdset_args, RUBY_UBF_IO, 0);
+#elif HAVE_RB_THREAD_BLOCKING_REGION
+      rc = rb_thread_blocking_region(curb_select, &amp;fdset_args, RUBY_UBF_IO, 0);
+#elif HAVE_RB_THREAD_FD_SELECT
+      rc = rb_thread_fd_select(maxfd+1, &amp;fdread, &amp;fdwrite, &amp;fdexcep, &amp;tv);
+#else
+      rc = rb_thread_select(maxfd+1, &amp;fdread, &amp;fdwrite, &amp;fdexcep, &amp;tv);
+#endif
+
+#ifdef _WIN32
+      cleanup_crt_fd(&amp;fdread, &amp;crt_fdread);
+      cleanup_crt_fd(&amp;fdwrite, &amp;crt_fdwrite);
+      cleanup_crt_fd(&amp;fdexcep, &amp;crt_fdexcep);
+#endif
+
+      switch(rc) {
+      case -1:
+        if(errno != EINTR) {
+          rb_raise(rb_eRuntimeError, &quot;select(): %s&quot;, strerror(errno));
+          break;
+        }
+      case 0: /* timeout */
+      default: /* action */
+        rb_curl_multi_run( self, rbcm-&gt;handle, &amp;(rbcm-&gt;running) );
+        rb_curl_multi_read_info( self, rbcm-&gt;handle );
+        if (block != Qnil) { rb_funcall(block, rb_intern(&quot;call&quot;), 1, self);  }
+        break;
+      }
+    }
+
+  } while( rbcm-&gt;running );
+
+  rb_curl_multi_read_info( self, rbcm-&gt;handle );
+  if (block != Qnil) { rb_funcall(block, rb_intern(&quot;call&quot;), 1, self);  }
+  if (cCurlMutiAutoClose  == 1) {
+    rb_funcall(self, rb_intern(&quot;close&quot;), 0);
+  }
+  return Qtrue;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-pipeline-3D" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            multi = Curl::Multi.new
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            pipeline = true
+          </span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Pass a long set to 1 for HTTP/1.1 pipelining, 2 for HTTP/2 multiplexing, or
+0 to disable.</p>
+
+<pre class="ruby"><span class="ruby-constant">Enabling</span> <span class="ruby-identifier">pipelining</span> <span class="ruby-identifier">on</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">multi</span> <span class="ruby-identifier">handle</span> <span class="ruby-identifier">will</span> <span class="ruby-identifier">make</span> <span class="ruby-identifier">it</span> <span class="ruby-identifier">attempt</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">perform</span> <span class="ruby-constant">HTTP</span> <span class="ruby-constant">Pipelining</span> <span class="ruby-identifier">as</span>
+</pre>
+
+<p>far as possible for transfers using this handle. This means that if you add
+a second request  that can use an already existing connection, the second
+request will be “piped” on the same connection rather than being executed
+in parallel. (Added in 7.16.0, multiplex added in 7.43.0)</p>
+          
+          
+
+          
+          <div class="method-source-code" id="pipeline-3D-source">
+            <pre>static VALUE ruby_curl_multi_pipeline(VALUE self, VALUE method) {
+#ifdef HAVE_CURLMOPT_PIPELINING
+  ruby_curl_multi *rbcm;
+
+  long value;
+
+  if (method == Qtrue) {
+    value = 1;
+  } else if (method == Qfalse) {
+    value  = 0;
+  } else {
+    value = NUM2LONG(method);
+  } 
+
+  Data_Get_Struct(self, ruby_curl_multi, rbcm);
+  curl_multi_setopt(rbcm-&gt;handle, CURLMOPT_PIPELINING, value);
+#endif
+  return method == Qtrue ? 1 : 0;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.0.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
